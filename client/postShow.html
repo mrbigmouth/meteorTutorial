@@ -1,0 +1,35 @@
+<template name="postShow">
+  <div id="postShow" class="blog-single">
+    {{#if session "postHasFeaturedImage"}}
+      {{> blogShowFeaturedImage}}
+    {{/if}}
+    {{> postShowBody}}
+  </div>
+</template>
+
+<template name="postShowBody">
+  <article class="post">
+    {{#unless titleBackground}}
+      <h1 class="mb-title text-left">
+        {{title}}
+      </h1>
+      <div class="post-meta text-left">
+        {{authorName}} 發布於 {{formatDate publishedAt}}
+        {{> blogTags }}
+      </div>
+    {{/unless}}
+    <div id="commentable-area" class="the-content">
+      {{{html}}}
+    </div>
+  </article>
+  <div class="blog-back-link text-right">
+    <a href="{{pathFor 'index'}}"><i class="fa fa-caret-left"></i>回到首頁</a>
+  </div>
+  {{> shareit}}
+  {{> insertDisqus this}}
+</template>
+
+<template name="insertDisqus">
+  <div id="disqus_thread"></div>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</template>

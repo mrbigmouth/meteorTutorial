@@ -1,0 +1,40 @@
+<template name="layout">
+  <div class="container">
+    <header id="header">
+      <h1>
+        Meteor中文實戰手<span id="admin_secrect_button">冊</span>
+      </h1>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <p class="navbar-text">文章分類：</p>
+          <ul class="nav navbar-nav">
+            <li class="{{hasActiveClass}}">
+              <a href="{{pathFor route='index'}}">全部</a>
+            </li>
+            <li class="{{hasActiveClass 0}}">
+              <a href="{{pathFor route='searchTagged' data=getTagData0}}">{{getTagText 0}}</a>
+            </li>
+            <li class="{{hasActiveClass 1}}">
+              <a href="{{pathFor route='searchTagged' data=getTagData1}}">{{getTagText 1}}</a>
+            </li>
+            <li class="{{hasActiveClass 2}}">
+              <a href="{{pathFor route='searchTagged' data=getTagData2}}">{{getTagText 2}}</a>
+            </li>
+            <li class="{{hasActiveClass 3}}">
+              <a href="{{pathFor route='searchTagged' data=getTagData3}}">{{getTagText 3}}</a>
+            </li>
+            <li class="{{hasActiveClass 4}}">
+              <a href="{{pathFor route='searchTagged' data=getTagData4}}">{{getTagText 4}}</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="{{pathFor route='rss'}}" style="color: #EE7700;">RSS</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    {{> yield}}
+  </div>
+</template>

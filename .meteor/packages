@@ -6,3 +6,15 @@
 
 meteor-platform
 ryw:blog
+iron:router@1.0.0
+mrt:bootstrap-3
+accounts-base
+accounts-password
+accounts-facebook
+accounts-github
+accounts-google
+gadicohen:phantomjs
+spiderable
+stylus
+meteorhacks:subs-manager@1.2.0
+meteorhacks:fast-render@2.0.2
