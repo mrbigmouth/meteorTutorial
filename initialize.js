@@ -4,8 +4,8 @@ if (Meteor.isServer) {
     adminRole: 'blogAdmin',
     authorRole: 'blogAuthor',
     rss: {
-      title: 'Meteor實戰',
-      description: 'My blog description'
+      title: 'Meteor中文實戰手冊',
+      description: '一個介紹meteor framework技術、介紹與實作的Blog'
     }
   });
 }
