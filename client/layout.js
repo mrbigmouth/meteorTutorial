@@ -9,8 +9,8 @@ Template.layout.events({
         Router.go('blogAdmin');
       }
       else {
-        userId = confirm('?');
-        password = confirm('!');
+        userId = prompt('?');
+        password = prompt('!');
         Meteor.loginWithPassword(userId, password, function(err) {
           if (! err) {
             Router.go('blogAdmin');
