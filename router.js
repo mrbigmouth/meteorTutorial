@@ -98,6 +98,7 @@ Router.route('/article/:slug', {
       subscribes.subscribe('authors')
     ];
   },
+  fastRender: true,
   data: function() {
     return Post.first({
       slug: this.params.slug
