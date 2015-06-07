@@ -1,5 +1,5 @@
 UI.registerHelper("formatDate", function(date) {
-  return moment(new Date(date)).format("YYYY/MM/DD HH:ii:ss");
+  return moment(new Date(date)).format("YYYY/MM/DD HH:mm:ss");
 });
 
 UI.registerHelper("formatTags", function(tags) {
