@@ -4,7 +4,7 @@ Template.postShow.helpers({
   }
 });
 
-Template.disqus.onRendered(function() {
+Template.insertDisqus.onRendered(function() {
   var post = this.data;
   var dsq;
   var disqus_shortname;

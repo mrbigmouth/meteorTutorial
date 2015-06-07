@@ -92,7 +92,11 @@ Router.route('/article/:slug', {
     }
   },
   waitOn: function() {
-    return [Meteor.subscribe('singlePostBySlug', this.params.slug), subscribes.subscribe('commentsBySlug', this.params.slug), subscribes.subscribe('authors')];
+    return [
+      subscribes.subscribe('singlePostBySlug', this.params.slug),
+      subscribes.subscribe('commentsBySlug', this.params.slug),
+      subscribes.subscribe('authors')
+    ];
   },
   data: function() {
     return Post.first({
