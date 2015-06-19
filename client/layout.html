@@ -1,3 +1,9 @@
+<head>
+  <meta name="author" content="Mr. Bigmouth" />
+  <meta name="keywords" content="meteor, node.js, javascript, 教學, 實戰" />
+  <meta name="description" content="關於Meteor的實戰教學文件。" />
+</head>
+
 <template name="layout">
   <div class="container">
     <header id="header">
@@ -36,5 +42,8 @@
       </nav>
     </header>
     {{> yield}}
+    <footer id="footer">
+      Copyright &copy; 2016 <a href="{{pathFor route='author'}}">Mr. Bigmouth</a> All rights reserved
+    </footer>
   </div>
 </template>

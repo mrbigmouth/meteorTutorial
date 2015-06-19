@@ -105,3 +105,9 @@ Router.route('/article/:slug', {
     });
   }
 });
+
+//作者介紹
+//顯示文章
+Router.route('/author', {
+  name: 'author'
+});
