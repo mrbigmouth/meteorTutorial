@@ -5,6 +5,11 @@ subscribes = new SubsManager({
   expireIn: 5
 });
 
+//預設依日期由舊到新排序
+if (Meteor.isClient) {
+  Session.setDefault('order', 1);
+}
+
 //首頁轉頁
 Router.route('/', {
   name: 'index',
@@ -29,8 +34,8 @@ Router.route('/', {
         },
         {
           sort: {
-            //照發表日期序由舊到新排序
-            publishedAt: 1
+            //依發表日期序排序
+            publishedAt: Session.get('order')
           }
         }
       )
@@ -56,8 +61,8 @@ Router.route('/tag/:tag', {
         },
         {
           sort: {
-            //照發表日期序由舊到新排序
-            publishedAt: 1
+            //依發表日期序排序
+            publishedAt: Session.get('order')
           }
         }
       )

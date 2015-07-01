@@ -12,25 +12,32 @@
       </h1>
       <nav class="navbar navbar-default">
         <div class="container-fluid">
-          <p class="navbar-text">文章分類：</p>
+          <p class="navbar-text">選擇文章排序：</p>
           <ul class="nav navbar-nav">
-            <li class="{{hasActiveClass}}">
-              <a href="{{pathFor route='index'}}">全部</a>
+            <li class="{{hasActiveClass 'orderAsc'}}" data-action="1">
+              <a href="javascript:;">由舊到新</a>
             </li>
-            <li class="{{hasActiveClass 0}}">
-              <a href="{{pathFor route='searchTagged' data=getTagData0}}">{{getTagText 0}}</a>
+            <li class="{{hasActiveClass 'orderDesc'}}" data-action="-1">
+              <a href="javascript:;">由新到舊</a>
             </li>
-            <li class="{{hasActiveClass 1}}">
-              <a href="{{pathFor route='searchTagged' data=getTagData1}}">{{getTagText 1}}</a>
-            </li>
-            <li class="{{hasActiveClass 2}}">
-              <a href="{{pathFor route='searchTagged' data=getTagData2}}">{{getTagText 2}}</a>
-            </li>
-            <li class="{{hasActiveClass 3}}">
-              <a href="{{pathFor route='searchTagged' data=getTagData3}}">{{getTagText 3}}</a>
-            </li>
-            <li class="{{hasActiveClass 4}}">
-              <a href="{{pathFor route='searchTagged' data=getTagData4}}">{{getTagText 4}}</a>
+          </ul>
+          <p class="navbar-text">瀏覽文章分類：</p>
+          <ul class="nav navbar-nav">
+            <li role="presentation" class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" role="button" aria-haspopup="true" aria-expanded="false">
+                {{activeTagText}}
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="{{isActiveRoute route='index'}}">
+                  <a href="{{pathFor route='index'}}">全部文章</a>
+                </li>                
+                {{#each allTagList}}
+                  <li class="{{isActiveRoute route='searchTagged' data=this}}">
+                    <a href="{{pathFor route='searchTagged' data=this}}">{{this.tag}}</a>
+                  </li>
+                {{/each}}
+              </ul>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
