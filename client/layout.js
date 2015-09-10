@@ -9,7 +9,7 @@ Template.layout.events({
 });
 
 
-var allTagList = ['基本概述', '初級實戰', '中級實戰', '高級實戰', '套件應用', '簡單聊天室', '臺北大富翁'];
+var allTagList = ['基本概述', '初級實戰', '中級實戰', '高級實戰', 'Blaze範例', '套件應用', '簡單聊天室', '臺北大富翁'];
 Template.layout.helpers({
   hasActiveClass: function(cond) {
     var result = false;
