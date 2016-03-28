@@ -28,7 +28,7 @@ Router.route('/', {
   fastRender: true,
   data: function() {
     return {
-      posts: Blog.Post.where(
+      posts: Post.where(
         {
           published: true
         },
@@ -54,7 +54,7 @@ Router.route('/tag/:tag', {
   fastRender: true,
   data: function() {
     return {
-      posts: Blog.Post.where(
+      posts: Post.where(
         {
           tags: this.params.tag,
           published: true
@@ -79,7 +79,7 @@ Router.route('/article/:slug', {
     return this.next();
   },
   onBeforeAction: function() {
-    var images = Blog.Post.first({
+    var images = Post.first({
       slug: this.params.slug
     }).featuredImage;
 
@@ -105,7 +105,7 @@ Router.route('/article/:slug', {
   },
   fastRender: true,
   data: function() {
-    return Blog.Post.first({
+    return Post.first({
       slug: this.params.slug
     });
   }
